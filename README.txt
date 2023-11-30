@@ -14,13 +14,9 @@ Adjunto el link y el enlace para la clonación del proyecto de GitHab para su re
 LINK..: https://josbalcazar.github.io/Ecommerce14/
 ENLACE: https://github.com/JosBalcazar/Ecommerce14.git
 
-
-CORREO
-[20:46] Docente - Franccesco Michael Jaimes Agreda
-ffjaimes@idat.edu.pe
-
-Asunto: Avance curso fronend
-Buenas noches,
-
-Link....repositorio publico
-(Debe haber un README de como levantar el proyecto)
+Para la clonacion:
+- Crear una carpeta
+- Levantar VSC en esta carpeta, abrir terminal de Git Bash
+- Y ejecutar los comandos:
+    git init
+    git clone https://github.com/JosBalcazar/Ecommerce14.git
