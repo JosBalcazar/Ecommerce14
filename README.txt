@@ -11,8 +11,8 @@ Nota: Todavía falta completar varios temas, como:
 
 Adjunto el link y el enlace para la clonación del proyecto de GitHab para su revisión:
 
-LINK..: https://josbalcazar.github.io/Ecommerce12/
-ENLACE: https://github.com/JosBalcazar/Ecommerce12.git
+LINK..: https://josbalcazar.github.io/Ecommerce14/
+ENLACE: https://github.com/JosBalcazar/Ecommerce14.git
 
 
 CORREO
