@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="verificaCarrito()">
+
+    <div class="container-fluid cont">
+
+        <div class="row cont-barra">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8 barra">
+                <a href=""><img src="ico/phone1.svg" alt="Telefono"></a>
+                <a href=""><span>(51-1)444-4444</span></a>
+                <a href=""><img src="ico/mail1.svg" alt="Email"></a>
+                <a href=""><span>ventas@empresa.com</span></a>
+                <a href=""><img src="ico/facebook2.svg" alt="Fecebook"></a>
+                <a href=""><img src="ico/whatsapp1.svg" alt="WhatsApp"></a>
+                <a href=""><img src="ico/twitter.svg" alt="Twitter"></a>
+            </div>
+        </div>
+        
+        <!-- BARRA DE BUSQUEDA -->
+        <div class="row p-md-4 align-items-md-center barra-busqueda">
+            <div class="col-md-1 logo">
+                <a href="index.html"><img src="img/Rodamientos de bolas.png" alt="Logo"></a>
+                <span>ROD</span>
+            </div>
+            <div class="col-md-2">
+                <a class="text-decoration-none" href="#">
+                    <img src="ico/menu.svg" alt="Categorias">
+                    <span class="categoria">Categorias</span>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex flex-row">
+                    <input id="bus-itm" class="rounded-pill busqueda" type="text" > 
+                    <a href="">
+                        <img src="ico/x.svg" alt="Cierre">
+                    </a>
+                    <a href="" id="btnBusca">
+                        <img src="ico/lupa1.svg" alt="Busqueda" onclick="busquedaItems()">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <a class="text-decoration-none" href="#">
+                    <img src="ico/user2.svg" alt="Inicio sesion">
+                    <span class="sesion">Inicia sesión</span>
+                </a>
+            </div>
+            <div class="col-md-1">
+                <a href="#">
+                    <img onclick="toogleCarrito()"  src="ico/cart1.svg" alt="Carrito">
+                </a>
+                <span id="car-btn">0</span>
+            </div>
+        </div>
+
+        <!-- BARRA DE INFORMACION -->
+        <div class="row">
+            <div class="col-md-12" >
+                <nav>
+                    <ul class="cont-infor">
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="catalogos.html">Catalogo</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Carrito de compras -->
+        <section class="menu" id="menu">
+            <div class="compras">
+                <span>Carrito de compras</span>
+                <a href=""><img src="ico/x.svg" alt="">Cerrar</a>
+            </div>
+
+            <div class="compras-det">
+                <div id="compras-detcom">
+                    <!-- CONTENIDO DEL DETALLE DE ITEMS DEL CARRITO -->
+
+                    <!-- <div class="compras-detcom compras-detcom-tmp">
+                        <img id="com-img" src="img/img001.png" alt="Articulo seleccionado">
+                        <div>
+                            <p id="com-cod">6205-2Z/C3</p>
+                            <div class="com-pre">
+                                <p>1 x</p>
+                                <span id="com-pre">11.59</span>
+                            </div>
+                        </div>
+                    </div> -->                    
+                </div>
+
+                <div class="compras-dettot">
+                    <div>
+                        <p>Subtotal</p>
+                        <span id="com-tot">0.00</span>
+                    </div>
+                    <button>Ver carrito</button>
+                    <button class="compras-dettot-fin">Finalizar compra</button>
+                </div>
+            </div>
+
+        </section>
+        <div class="overlay" id="overlay" onclick="toogleMenu()">
+        </div>        
+
+
+
+
+         <!-- BARRA DE CONTENIDO -->
+        <div class="row">
+            <!-- Filtro -->       <!-- d-none    -->
+            <div class="col-md-3 cont-fil">
+                 <a href=""><img class="cont-dsct" src="img/dscto30.png" alt="Descuento1"></a>
+                 <a href=""><img class="cont-dsct" src="img/dscto40.png" alt="Descuento2"></a>
+            </div>
+
+            <!-- Items -->
+            <div class="col-md-9">
+                <div class="row cont-msg" id="cont-msg">
+                    Area de mansajes
+                </div>
+
+                <div class="row" id="cont-itm">
+                    <!-- CONTENIDO DEL DETALLE DE ITEMS FILTRADOS -->
+
+                    <!-- <div class="col-md-4 col-sm-6 cont-itm-det">
+                        <div class="itm-det p-4">
+                                <a href="det_item.html"  onclick="detalle_item()">
+                                    <img class="imagen" id="itm-img"  src="img/Rodamiento 6201LLUC3.png" alt="articulo">
+                                    <h6>
+                                        <p id="itm-cod">6205-2Z - SKF</p>
+                                    </h6>
+                                    <div>
+                                        <p id="itm-fam">RODAMIENTOS</p>
+                                    </div>
+                                    <span class="precio" id="itm-pre">S/22.00</span>
+                                </a>                                
+                                <div>
+                                    <input class="rounded-pill carrito" type="button" value="Agregar al carrito" onclick="carrito_item()">
+                                </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row contenedor-pie">
+
+            <div class="col-md-1"></div>
+
+            <div class="col-md-3">
+                <div class="contacto-tit pt-4 ">
+                    <div class="d-flex flex-row">
+                        <img src="ico/arroba.svg" alt="Contacto">
+                        <h4 class="ps-2 fw-bold">Ponte en contacto</h4>
+                    </div>
+                </div>
+                
+                <div class="contacto-det">
+                    <div class="text-start pt-2 ps-2">
+                        <img src="ico/mail1.svg" alt="Email">
+                        <span class="ps-1">ventas@dominio.com</span>
+                    </div>
+                    <div class="text-start pt-2 ps-2">
+                        <img src="ico/phone1.svg" alt="Telefono">
+                        <span class="ps-1">(01) 111 1111</span>
+                    </div>
+                    <div class="text-start  pt-2 ps-2">
+                        <img src="ico/map.svg" alt="Direccion">
+                        <span class="ps-1">Av. La Peruanidad 999</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BARRA DE PIE DE PAGINA -->
+            <div class="col-md-4">
+                <div class="mapsite-tit pt-4">
+                    <div class="d-flex flex-row">
+                        <img src="ico/sitemap.svg" alt="Mapsite">
+                        <h4 class="ps-2 fw-bold">Mapsite</h4>
+                    </div>
+                </div>
+
+                <div class="row pb-4">
+                    <div class="col-6">
+                        <ul class="list-unstyled text-start ps-5 mapsite-det">
+                            <li class="pt-2">
+                                <a href="#">Nosotros</a>
+                            </li>
+                            <li class="pt-2">
+                                <a href="productos.html">Productos</a>
+                            </li>
+                            <li class="pt-2">
+                                <a href="servicios.html">Servicios</a>
+                            </li>
+                            <li class="pt-2">
+                                <a href="catalogos.html">Catalogo</a>
+                            </li>
+                        </ul>    
+                    </div>
+                    <div class="col-6">
+                        <ul class="list-unstyled text-start mapsite-det">
+                            <li class="pt-2">
+                                <a href="#">Sucursales</a>
+                            </li>
+                            <li class="pt-2">
+                                <a href="#">Distribuidores</a>
+                            </li>
+                            <li class="pt-2">
+                                <a href="#">Noticias</a>
+                            </li>
+                            <li class="pt-2">
+                                <a href="contacto.html">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="suscribete-tit pt-4">
+                    <div class="d-flex flex-row">
+                        <img src="ico/edit.svg" alt="Suscripcion">
+                        <h4 class="ps-2 fw-bold">Suscribete</h4>
+                    </div>
+                </div>
+
+                <div class="pt-1 pb-4">
+                    <p class="text-start ps-4">Suscribete a la pagina web para mantenerte siempre informado de lo nuevo y nuestras promociones
+                    </p>
+                    <div class="d-flex flex-column suscribete-ent";>
+                        <input type="text" placeholder="Ingresa tu e-mail">
+                        <div class="d-grid justify-content-end pt-2">
+                            <button>Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-1"></div>
+
+        </div>
+        
+        
+    </div>
+
+    <script src="js/java.js"></script>
+    <script src="js/carrito.js"></script>    
+    <script src="bd/Items.jsonp"></script>
+    <!-- <script src="bd/ItemsPromo.jsonp"></script> -->
+</body>
+</html>

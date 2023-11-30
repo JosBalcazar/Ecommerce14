@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body onload="cargaDetalle()">
+
+    <div class="container-fluid cont">
+
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8 barra">
+                <a href=""><img src="ico/phone1.svg" alt=""></a>
+                <a href=""><span>(51-1)444-4444</span></a>
+                <a href=""><img src="ico/mail1.svg" alt=""></a>
+                <a href=""><span>ventas@empresa.com</span></a>
+                <a href=""><img src="ico/facebook2.svg" alt=""></a>
+                <a href=""><img src="ico/whatsapp1.svg" alt=""></a>
+                <a href=""><img src="ico/twitter.svg" alt=""></a>
+            </div>
+        </div>
+        
+        <!-- BARRA DE BUSQUEDA -->
+        <div class="row p-md-4 align-items-md-center barra-busqueda">
+            <div class="col-md-1 logo">
+                <a href="index.html"><img src="img/Rodamientos de bolas.png" alt=""></a>
+                <span>ROD</span>
+            </div>            
+            <div class="col-md-2">
+                <a class="text-decoration-none" href="#">
+                    <img src="ico/menu.svg" alt="">
+                    <span class="categoria">Categorias</span>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex flex-row">
+                    <input id="bus-itm" class="rounded-pill busqueda" type="text" > 
+                    <a href="">
+                        <img src="ico/x.svg" alt="Cierre">
+                    </a>
+                    <a href="" id="btnBusca"></a>
+                        <img src="ico/lupa1.svg" alt="Busqueda" onclick="busquedaItems()">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <a class="text-decoration-none" href="#">
+                    <img src="ico/user2.svg" alt="Inicio sesion">
+                    <span class="sesion">Inicia sesión</span>
+                </a>
+            </div>
+            <div class="col-md-1">
+                <a href="#">
+                    <img onclick="toogleCarrito()"  src="ico/cart1.svg" alt="Carrito">                    
+                </a>
+                <span id="car-btn">0</span>
+            </div>
+        </div>
+
+        <!-- BARRA DE INFORMACION -->
+        <div class="row">
+            <div class="col-md-12" >
+                <nav>
+                    <ul class="cont-infor">
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="catalogos.html">Catalogo</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row pb-5 tit-content">
+            <h1>DESCRIPCION</h1>
+        </div>        
+
+
+
+
+        <!-- Carrito de compras -->
+        <section class="menu" id="menu">
+            <div class="compras">
+                <span>Carrito de compras</span>
+                <a href=""><img src="ico/x.svg" alt="">Close</a>
+            </div>
+
+            <div class="compras-det">
+                <div id="compras-detcom">
+                    <!-- CONTENIDO DEL DETALLE DE ITEMS DEL CARRITO -->
+                    <!-- <div class="compras-detcom compras-detcom-tmp">
+                        <img id="com-img" src="img/img001.png" alt="Articulo seleccionado">
+                        <div>
+                            <p id="com-cod">6205-2Z/C3</p>
+                            <div class="com-pre">
+                                <p>1 x</p>
+                                <span id="com-pre">11.59</span>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="compras-dettot">
+                    <div>
+                        <p>Subtotal</p>
+                        <span id="com-tot">0.00</span>
+                    </div>
+                    <button>Ver carrito</button>
+                    <button class="compras-dettot-fin">Finalizar compra</button>
+                </div>
+            </div>
+
+        </section>
+        <div class="overlay" id="overlay" onclick="toogleMenu()">
+        </div>        
+
+
+
+
+         <!-- CONTENIDO -->
+        <div class="row pt-4 pb-4 det-content">
+            <div class="col-sm-1">
+                <!-- vacio -->
+            </div>
+            <div class="col-sm-5 img-content" id="di-itm-img">
+                <img class="itm-imagen" src="img/Rodamiento 6205 2RS C3.png" alt="Producto">
+            </div>
+            <div class="col-sm-5">
+                <div class="itm-detalle">
+                    <p id="di-itm-nav">Inicio / RODAMIENTOS / 6205ZZCM - NTN</p>
+                    <h2 id="di-itm-cod">6205ZZCM/5K - NTN</h2>
+                    <span id="di-itm-pre">S/16.00</span>
+                    <p id="di-itm-mca">NTN</p>
+                    <h5 class="pb-2" id="di-itm-stk" >280 disponibles</h5>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12 itm-cant" >
+                            <button onclick="decrease()" >-</button>
+                            <div id="di-itm-cant">
+                                <input id="di-itm-valor" type="number" value="1"/>
+                            </div>
+                            <button onclick="increase()">+</button>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <button class="itm-carbtn" onclick="carrito_item()">AÑADIR AL CARRITO</button>
+                        </div>
+                    </div>
+                    <div class="itm-lista" >
+                        <a href="">
+                            <img src="ico/shuffle.svg" alt="">
+                            Compare
+                        </a>
+                        <a href="">
+                            <img src="ico/heart.svg" alt="">
+                            Añadir a favoritos
+                        </a>
+                    </div>
+                    <div class="itm-datos">
+                        <h5>SKU:</h5>
+                        <p id="di-itm-cdi">3132-067676</p>
+                    </div>
+                    <div class="itm-datos">
+                        <h5>Categoria:</h5>
+                        <p id="di-itm-fam">RODAMIENTOS</p>
+                    </div>
+                    <div class="itm-datos">
+                        <h5>Share:
+                            <img src="ico/facebook2.svg" alt="">
+                            <img src="ico/twitter.svg" alt="">
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <!-- vacio -->
+            </div>
+
+        </div>
+
+        <div class="row contenedor-pie">
+
+            <div class="col-md-1"></div>
+
+            <div class="col-md-3">
+                <div class="contacto-tit pt-4 ">
+                    <div class="d-flex flex-row">
+                        <img src="ico/arroba.svg" alt="">
+                        <h4 class="ps-2 fw-bold">Ponte en contacto</h4>
+                    </div>
+                </div>
+                
+                <div class="contacto-det">
+                    <div class="text-start pt-2 ps-2">
+                        <img src="ico/mail1.svg" alt="">
+                        <span class="ps-1">ventas@dominio.com</span>
+                    </div>
+                    <div class="text-start pt-2 ps-2">
+                        <img src="ico/phone1.svg" alt="">
+                        <span class="ps-1">(01) 111 1111</span>
+                    </div>
+                    <div class="text-start  pt-2 ps-2">
+                        <img src="ico/map.svg" alt="">
+                        <span class="ps-1">Av. La Peruanidad 999</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BARRA DE PIE DE PAGINA -->
+            <div class="col-md-4">
+                <div class="mapsite-tit pt-4">
+                    <div class="d-flex flex-row">
+                        <img src="ico/sitemap.svg" alt="">                        
+                        <h4 class="ps-2 fw-bold">Mapsite</h4>
+                    </div>
+                </div>
+
+                <div class="row pb-4">
+                    <div class="col-6">
+                        <ul class="list-unstyled text-start ps-5 mapsite-det">
+                            <li class="pt-2">
+                                <a href="#">Nosotros</a>
+                            </li>
+                            <li class="pt-2">
+                                <a href="productos.html">Productos</a>
+                            </li>
+                            <li class="pt-2">
+                                <a href="servicios.html">Servicios</a>
+                            </li>
+                            <li class="pt-2">
+                                <a href="catalogos.html">Catalogo</a>
+                            </li>
+                        </ul>    
+                    </div>
+                    <div class="col-6">
+                        <ul class="list-unstyled text-start mapsite-det">
+                            <li class="pt-2">
+                                <a href="#">Sucursales</a>
+                            </li>
+                            <li class="pt-2">
+                                <a href="#">Distribuidores</a>
+                            </li>
+                            <li class="pt-2">
+                                <a href="#">Noticias</a>
+                            </li>
+                            <li class="pt-2">
+                                <a href="contacto.html">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="suscribete-tit pt-4">
+                    <div class="d-flex flex-row">
+                        <img src="ico/edit.svg" alt="">                        
+                        <h4 class="ps-2 fw-bold">Suscribete</h4>
+                    </div>
+                </div>
+
+                <div class="pt-1 pb-4">
+                    <p class="text-start ps-4">Suscribete a la pagina web para mantenerte siempre informado de lo nuevo y nuestras promociones
+                    </p>
+                    <div class="d-flex flex-column suscribete-ent";>
+                        <input type="text" placeholder="Ingresa tu e-mail">
+                        <div class="d-grid justify-content-end pt-2">
+                            <button>Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-1"></div>
+
+        </div>
+        
+        
+    </div>
+
+    <script src="js/producto.js"></script>
+    <script src="js/carrito.js"></script>
+</body>
+</html>
